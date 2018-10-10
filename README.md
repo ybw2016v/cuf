@@ -84,12 +84,19 @@ void usercode(float * p1,float * vx1,float * vy1,float *z0j,int xar, int yar,flo
 相关说明：
 
 p1  : 指向计算过程之中的压强场指针
-vx1 : 指向计算过程之中的x方向速度分量场指针
+
+vx1 : 指向计算过程之中的x方向速度分量场
+指针
 vy1 : 指向计算过程之中的y方向速度分量场指针
+
 z0j : 指向计算过程之中介质参数场指针
+
 xar yar : 坐标索引。例：调用压强场的(a,b)点数据：p1[a\*xar+b\*yar]
+
 m : m参数值
+
 i : 时间，表示已经计算到第i步
+
 
 三维模式下次要配置文件写法。
 
@@ -102,12 +109,19 @@ void usercode(float * p1,float * vx,float * vy,float * vz,float *z0,int xar,  in
 ```
 
 p1  : 指向计算过程之中的压强场指针
+
 vx : 指向计算过程之中的x方向速度分量场指针
+
 vy : 指向计算过程之中的y方向速度分量场指针
+
 vz : 指向计算过程之中的z方向速度分量场指针
+
 z0j : 指向计算过程之中介质参数场指针
+
 xar yar 砸人: 坐标索引。例：调用压强场的(a,b，c)点数据：p1[a\*xar+b\*yar+c\*zar]
+
 m : m参数值
+
 i : 时间，表示已经计算到第i步
 
 ## 数组生成器
