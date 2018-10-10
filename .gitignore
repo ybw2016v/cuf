@@ -102,3 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+*.i
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
+*.npy
