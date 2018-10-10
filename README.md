@@ -109,6 +109,34 @@ void usercode(float * p1,float * vx,float * vy,float * vz,float *z0,int xar,  in
 >m : m参数值
 >i : 时间，表示已经计算到第i步
 
+## 数组生成器
+
+```bash
+$./initdog.py --help
+usage: initdog.py [-h] [-2d | -3d] [-name [NAME]] [-n [N]] x y [z]
+
+NPY格式数组生成器
+默认数值为1
+例子：
+生成一个2X3的名为“num”二维数组:
+./initdog.py -2d -name num 2 3
+生成一个2X3X4的数值为5.3的三维数组：
+/initdog.py -3d -n 5.3 2 3 4
+
+positional arguments:
+  x             X轴
+  y             Y轴
+  z             Z轴
+
+optional arguments:
+  -h, --help    show this help message and exit
+  -2d, --d2     二维
+  -3d, --d3     三维
+  -name [NAME]  输出文件名
+  -n [N]        数值
+
+```
+
 ## 相关依赖
 
 * make
