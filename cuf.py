@@ -3,7 +3,7 @@ import argparse
 import os
 import shutil
 
-parser = argparse.ArgumentParser(description='Process some integers.')
+parser = argparse.ArgumentParser(description='带有GPU加速的声场FDTD方法,用法详情见https://github.com/ybw2016v/cuf')
 parser.add_argument('-t','--type',help='计算类型',nargs='?',choices=['2d','2dm','3d','3dm'])
 parser.add_argument('path',help='配置文件路径',default='cufig.ini',nargs='?')
 # gu=parser.add_argument_group()
