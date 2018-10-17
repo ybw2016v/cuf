@@ -18,8 +18,22 @@
 ├── scr 
 └── usercode.c 次配置文件
 ```
+## 计算原理
+
+描述声场变化的状态方程：
+
+由伯努利方程可得
+$$ \begin{cases}
+\rho_{0} \frac{\partial \bm{v}}{\partial t}=-\nabla \cdot p \\
+\frac{1}{c^{2}_{0}} \frac{\partial p}{\partial v}=-\rho_{0} \nabla  \cdot \bm{v}
+\end{cases}$$
+
+其中$\nabla$为微分算符。
+
+将此方程组离散化处理
 
 
+$$ $$
 ## 使用方法
 
 ``` bash

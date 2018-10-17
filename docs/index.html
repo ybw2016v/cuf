@@ -1,0 +1,366 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="%E5%B8%A6%E6%9C%89gpu%E5%8A%A0%E9%80%9F%E7%9A%84%E5%A3%B0%E5%9C%BAfdtd%E6%96%B9%E6%B3%95">&#x5E26;&#x6709;GPU&#x52A0;&#x901F;&#x7684;&#x58F0;&#x573A;FDTD&#x65B9;&#x6CD5;</h1>
+
+<p>&#x4E00;&#x4E2A;&#x5229;&#x7528;cuda&#x52A0;&#x901F;python&#x7A0B;&#x5E8F;&#x5229;&#x7528;fdtd&#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x58F0;&#x573A;&#x6A21;&#x62DF;&#x7684;&#x7A0B;&#x5E8F;&#x3002;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x7528;numpy&#x6570;&#x7EC4;&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#x3002;</p>
+<p>&#x57FA;&#x4E8E;python3&#x548C;cuda&#xFF0C;&#x4EC5;&#x53EF;&#x5728;&#x88C5;&#x5907;&#x6709;NVIDIA&#x663E;&#x5361;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x4F7F;&#x7528;&#x3002;</p>
+<h2 class="mume-header" id="%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84">&#x6587;&#x4EF6;&#x7ED3;&#x6784;</h2>
+
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token punctuation">..</span>/cuf
+&#x251C;&#x2500;&#x2500; cufig.ini &#x4E3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+&#x251C;&#x2500;&#x2500; cuf.py &#x4E3B;&#x7A0B;&#x5E8F;
+&#x251C;&#x2500;&#x2500; initdog.py &#x521D;&#x59CB;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x811A;&#x672C;
+&#x251C;&#x2500;&#x2500; LICENSE
+&#x251C;&#x2500;&#x2500; README.md
+&#x251C;&#x2500;&#x2500; res &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x4F4D;&#x7F6E;
+&#x251C;&#x2500;&#x2500; scr 
+&#x2514;&#x2500;&#x2500; usercode.c &#x6B21;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+</pre><h2 class="mume-header" id="%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86">&#x8BA1;&#x7B97;&#x539F;&#x7406;</h2>
+
+<p>&#x63CF;&#x8FF0;&#x58F0;&#x573A;&#x53D8;&#x5316;&#x7684;&#x72B6;&#x6001;&#x65B9;&#x7A0B;&#xFF1A;</p>
+<p>&#x7531;&#x4F2F;&#x52AA;&#x5229;&#x65B9;&#x7A0B;&#x53EF;&#x5F97;<br>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><msub><mi>&#x3C1;</mi><mn>0</mn></msub><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi mathvariant="bold-italic">v</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>&#x2212;</mo><mi mathvariant="normal">&#x2207;</mi><mo>&#x22C5;</mo><mi>p</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mfrac><mn>1</mn><msubsup><mi>c</mi><mn>0</mn><mn>2</mn></msubsup></mfrac><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><mi>v</mi></mrow></mfrac><mo>=</mo><mo>&#x2212;</mo><msub><mi>&#x3C1;</mi><mn>0</mn></msub><mi mathvariant="normal">&#x2207;</mi><mo>&#x22C5;</mo><mi mathvariant="bold-italic">v</mi></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{cases}
+\rho_{0} \frac{\partial \bm{v}}{\partial t}=-\nabla \cdot p \\
+\frac{1}{c^{2}_{0}} \frac{\partial p}{\partial v}=-\rho_{0} \nabla  \cdot \bm{v}
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.03964em;vertical-align:-1.2698200000000002em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7698199999999997em;"><span style="top:-3.7698199999999997em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathit">&#x3C1;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathit mtight">t</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mtight"><span class="mord mtight"><span class="mord boldsymbol mtight" style="margin-right:0.03704em;">v</span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">&#x2212;</span><span class="mord">&#x2207;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">p</span></span></span><span style="top:-2.32982em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.62642em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathit mtight">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8051142857142857em;"><span style="top:-2.188485714285714em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span><span style="top:-2.8448em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.31151428571428574em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.5916399999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322159999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathit mtight" style="margin-right:0.03588em;">v</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mathit mtight">p</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">&#x2212;</span><span class="mord"><span class="mord mathit">&#x3C1;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">&#x2207;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.03704em;">v</span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.2698200000000002em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>&#x5176;&#x4E2D;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">&#x2207;</mi></mrow><annotation encoding="application/x-tex">\nabla</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">&#x2207;</span></span></span></span>&#x4E3A;&#x5FAE;&#x5206;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x5C06;&#x6B64;&#x65B9;&#x7A0B;&#x7EC4;&#x79BB;&#x6563;&#x5316;&#x5904;&#x7406;</p>
+<p></p>
+<h2 class="mume-header" id="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">./cuf.py -t &#x3010;&#x8BA1;&#x7B97;&#x6A21;&#x5F0F;&#x3011;&#x3010;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3011;
+
+</pre><p>&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;<code>cufig.ini</code></p>
+<p>&#x8BA1;&#x7B97;&#x6A21;&#x5F0F;&#x76EE;&#x524D;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x56DB;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>2d   &#x666E;&#x901A;&#x4E8C;&#x7EF4;&#x6A21;&#x5F0F;</li>
+<li>2dm  &#x5E26;&#x6709;mur&#x5438;&#x6536;&#x8FB9;&#x754C;&#x7684;&#x4E8C;&#x7EF4;&#x6A21;&#x5F0F;</li>
+<li>3d   &#x666E;&#x901A;&#x4E09;&#x7EF4;&#x6A21;&#x5F0F;</li>
+<li>3dm  &#x5E26;&#x6709;mur&#x5438;&#x6536;&#x8FB9;&#x754C;&#x7684;&#x4E09;&#x7EF4;&#x6A21;&#x5F0F;</li>
+</ul>
+<h3 class="mume-header" id="%E4%B8%BB%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">&#x4E3B;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+
+<pre data-role="codeBlock" data-info="ini" class="language-ini"><span class="token selector">[&#x8BA1;&#x7B97;&#x89C4;&#x6A21;]</span>
+<span class="token constant">&#x957F;&#x5EA6;</span> <span class="token attr-value"><span class="token punctuation">=</span> 128</span>
+<span class="token constant">&#x5BBD;&#x5EA6;</span> <span class="token attr-value"><span class="token punctuation">=</span> 128</span>
+<span class="token constant">&#x9AD8;&#x5EA6;</span> <span class="token attr-value"><span class="token punctuation">=</span> 128</span>
+&#xFF1B;&#x4E8C;&#x7EF4;&#x6A21;&#x5F0F;&#x65F6;&#x6B64;&#x9879;&#x4E0D;&#x586B;
+<span class="token constant">&#x8BA1;&#x7B97;&#x65F6;&#x95F4;</span> <span class="token attr-value"><span class="token punctuation">=</span> 10000</span>
+&#xFF1B;&#x8BA1;&#x7B97;&#x7684;&#x603B;&#x65F6;&#x95F4;&#x6B65;&#x957F;
+<span class="token selector">[&#x521D;&#x59CB;&#x503C;]</span>
+<span class="token constant">&#x81EA;&#x52A8;&#x521D;&#x503C;</span> <span class="token attr-value"><span class="token punctuation">=</span> &#x662F;</span>
+&#xFF1B;&#x521D;&#x59CB;&#x503C;&#x7684;&#x6DFB;&#x52A0;&#x65B9;&#x5F0F;&#xFF0C;&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x503C;&#x5219;&#x5168;&#x90E8;&#x6E05;&#x96F6;&#x3002;&#x63D0;&#x4F9B;&#x521D;&#x59CB;&#x503C;&#x7684;&#x5219;&#x5728;&#x4E0B;&#x9762;&#x6DFB;&#x52A0;&#x8DEF;&#x5F84;&#x3002;
+<span class="token constant">p0&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span> </span>
+<span class="token constant">vx&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span></span>
+<span class="token constant">vy&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span> </span>
+<span class="token constant">vz&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span></span>
+<span class="token constant">z0&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span> dogz.npy</span>
+&#xFF1B;z0&#x4E3A;&#x5FC5;&#x586B;&#x9879;
+<span class="token constant">m</span> <span class="token attr-value"><span class="token punctuation">=</span> 4</span>
+<span class="token selector">[&#x4E2D;&#x95F4;&#x8FC7;&#x7A0B;]</span>
+<span class="token constant">&#x6DFB;&#x52A0;&#x65B9;&#x5F0F;</span> <span class="token attr-value"><span class="token punctuation">=</span>./usercode.c</span>
+&#xFF1B;&#x6B21;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+
+<span class="token selector">[&#x7ED3;&#x679C;&#x8F93;&#x51FA;]</span>
+<span class="token constant">&#x8F93;&#x51FA;&#x9891;&#x7387;</span> <span class="token attr-value"><span class="token punctuation">=</span> 1000</span>
+&#xFF1B;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x95F4;&#x5468;&#x671F;
+<span class="token constant">&#x8F93;&#x51FA;&#x8DEF;&#x5F84;</span> <span class="token attr-value"><span class="token punctuation">=</span> ./res/</span>
+&#xFF1B;&#x8F93;&#x51FA;&#x7684;&#x8DEF;&#x5F84;
+</pre><h3 class="mume-header" id="%E6%AC%A1%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">&#x6B21;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+
+<p>&#x6B21;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5C06;&#x5728;&#x8BA1;&#x7B97;&#x7684;&#x51C6;&#x5907;&#x9636;&#x6BB5;&#x7F16;&#x8BD1;&#x8FDB;&#x8BA1;&#x7B97;&#x4E3B;&#x7A0B;&#x5E8F;&#x4E4B;&#x4E2D;&#x3002;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x5C06;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x6B21;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x63D0;&#x4F9B;&#x5728;&#x6BCF;&#x4E00;&#x6B65;&#x8BA1;&#x7B97;&#x540E;&#xFF0C;&#x901A;&#x8FC7;C&#x8BED;&#x8A00;&#x5BF9;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x6E90;&#x6216;&#x8005;&#x5176;&#x4F59;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x4E8C;&#x7EF4;&#x6A21;&#x5F0F;&#x4E0B;&#x6B21;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5199;&#x6CD5;&#x3002;</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword">void</span> <span class="token function">usercode</span><span class="token punctuation">(</span><span class="token keyword">float</span> <span class="token operator">*</span> p1<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span> vx1<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span> vy1<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span>z0j<span class="token punctuation">,</span><span class="token keyword">int</span> xar<span class="token punctuation">,</span> <span class="token keyword">int</span> yar<span class="token punctuation">,</span><span class="token keyword">float</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x66F4;&#x6539;</span>
+    p1<span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">*</span>xar<span class="token operator">+</span><span class="token number">4</span><span class="token operator">*</span>yar<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</pre><p>&#x76F8;&#x5173;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>p1  : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;&#x538B;&#x5F3A;&#x573A;&#x6307;&#x9488;</p>
+<p>vx1 : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;x&#x65B9;&#x5411;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x573A;<br>
+&#x6307;&#x9488;<br>
+vy1 : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;y&#x65B9;&#x5411;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x573A;&#x6307;&#x9488;</p>
+<p>z0j : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x4ECB;&#x8D28;&#x53C2;&#x6570;&#x573A;&#x6307;&#x9488;</p>
+<p>xar yar : &#x5750;&#x6807;&#x7D22;&#x5F15;&#x3002;&#x4F8B;&#xFF1A;&#x8C03;&#x7528;&#x538B;&#x5F3A;&#x573A;&#x7684;(a,b)&#x70B9;&#x6570;&#x636E;&#xFF1A;p1[a*xar+b*yar]</p>
+<p>m : m&#x53C2;&#x6570;&#x503C;</p>
+<p>i : &#x65F6;&#x95F4;&#xFF0C;&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x8BA1;&#x7B97;&#x5230;&#x7B2C;i&#x6B65;</p>
+<p>&#x4E09;&#x7EF4;&#x6A21;&#x5F0F;&#x4E0B;&#x6B21;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5199;&#x6CD5;&#x3002;</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword">void</span> <span class="token function">usercode</span><span class="token punctuation">(</span><span class="token keyword">float</span> <span class="token operator">*</span> p1<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span> vx<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span> vy<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span> vz<span class="token punctuation">,</span><span class="token keyword">float</span> <span class="token operator">*</span>z0<span class="token punctuation">,</span><span class="token keyword">int</span> xar<span class="token punctuation">,</span>  <span class="token keyword">int</span> yar<span class="token punctuation">,</span><span class="token keyword">int</span> zar<span class="token punctuation">,</span><span class="token keyword">float</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// &#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x66F4;&#x6539;</span>
+    p1<span class="token punctuation">[</span><span class="token number">64</span><span class="token operator">*</span>xar<span class="token operator">+</span><span class="token number">64</span><span class="token operator">*</span>yar<span class="token operator">+</span><span class="token number">64</span><span class="token operator">*</span>zar<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p>p1  : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;&#x538B;&#x5F3A;&#x573A;&#x6307;&#x9488;</p>
+<p>vx : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;x&#x65B9;&#x5411;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x573A;&#x6307;&#x9488;</p>
+<p>vy : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;y&#x65B9;&#x5411;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x573A;&#x6307;&#x9488;</p>
+<p>vz : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x7684;z&#x65B9;&#x5411;&#x901F;&#x5EA6;&#x5206;&#x91CF;&#x573A;&#x6307;&#x9488;</p>
+<p>z0j : &#x6307;&#x5411;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E4B;&#x4E2D;&#x4ECB;&#x8D28;&#x53C2;&#x6570;&#x573A;&#x6307;&#x9488;</p>
+<p>xar yar &#x7838;&#x4EBA;: &#x5750;&#x6807;&#x7D22;&#x5F15;&#x3002;&#x4F8B;&#xFF1A;&#x8C03;&#x7528;&#x538B;&#x5F3A;&#x573A;&#x7684;(a,b&#xFF0C;c)&#x70B9;&#x6570;&#x636E;&#xFF1A;p1[a*xar+b*yar+c*zar]</p>
+<p>m : m&#x53C2;&#x6570;&#x503C;</p>
+<p>i : &#x65F6;&#x95F4;&#xFF0C;&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x8BA1;&#x7B97;&#x5230;&#x7B2C;i&#x6B65;</p>
+<h2 class="mume-header" id="%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90%E5%99%A8">&#x6570;&#x7EC4;&#x751F;&#x6210;&#x5668;</h2>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$./initdog.py --help
+usage: initdog.py <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-2d <span class="token operator">|</span> -3d<span class="token punctuation">]</span> <span class="token punctuation">[</span>-name <span class="token punctuation">[</span>NAME<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-n <span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">]</span> x y <span class="token punctuation">[</span>z<span class="token punctuation">]</span>
+
+NPY&#x683C;&#x5F0F;&#x6570;&#x7EC4;&#x751F;&#x6210;&#x5668;
+&#x9ED8;&#x8BA4;&#x6570;&#x503C;&#x4E3A;1
+&#x4F8B;&#x5B50;&#xFF1A;
+&#x751F;&#x6210;&#x4E00;&#x4E2A;2X3&#x7684;&#x540D;&#x4E3A;&#x201C;num&#x201D;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;:
+./initdog.py -2d -name num 2 3
+&#x751F;&#x6210;&#x4E00;&#x4E2A;2X3X4&#x7684;&#x6570;&#x503C;&#x4E3A;5.3&#x7684;&#x4E09;&#x7EF4;&#x6570;&#x7EC4;&#xFF1A;
+/initdog.py -3d -n 5.3 2 3 4
+
+positional arguments:
+  x             X&#x8F74;
+  y             Y&#x8F74;
+  z             Z&#x8F74;
+
+optional arguments:
+  -h, --help    show this <span class="token function">help</span> message and <span class="token keyword">exit</span>
+  -2d, --d2     &#x4E8C;&#x7EF4;
+  -3d, --d3     &#x4E09;&#x7EF4;
+  -name <span class="token punctuation">[</span>NAME<span class="token punctuation">]</span>  &#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x540D;
+  -n <span class="token punctuation">[</span>N<span class="token punctuation">]</span>        &#x6570;&#x503C;
+
+</pre><h2 class="mume-header" id="%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96">&#x76F8;&#x5173;&#x4F9D;&#x8D56;</h2>
+
+<ul>
+<li>make</li>
+<li>nvcc</li>
+<li>argparse</li>
+<li>configparser</li>
+<li>numpy</li>
+<li>matplotlib</li>
+<li>progressbar</li>
+</ul>
+<h2 class="mume-header" id="%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0">&#x7248;&#x672C;&#x66F4;&#x65B0;</h2>
+
+<p>1.0 &#x539F;&#x59CB;&#x7248;&#x672C;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
