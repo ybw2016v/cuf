@@ -4,6 +4,7 @@
 
 基于python3和cuda，仅可在装备有NVIDIA显卡的计算机上使用。
 
+详细说明见[这里](https://ybw2016v.github.io/cuf/)
 
 ## 文件结构
 
