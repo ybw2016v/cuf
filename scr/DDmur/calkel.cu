@@ -79,8 +79,8 @@ __global__ void cul2(float * p1j,float * vx1j,float * vz1j,float *z0j,float *lx,
     if (i==blockDim.x-1)
     {
         float dog;
-        dog=lx[gridDim.x+j]-(vx1j[j*yr+(i)*xr]-vx1j[j*yr+(i-1)*xr]+vz1j[j*yr+(i-1)*xr]-vz1j[(j-1)*yr+(i-1)*xr])*z0j[j*yr+i*xr]/m;
-        p1j[j*yr+i*xr]=lx[blockDim.x+j]+(1.0-m)/(1.0+m)*(dog-p1j[j*yr+i*xr]);
+        dog=ly[gridDim.x+j]-(vx1j[j*yr+(i)*xr]-vx1j[j*yr+(i-1)*xr]+vz1j[j*yr+(i-1)*xr]-vz1j[(j-1)*yr+(i-1)*xr])*z0j[j*yr+i*xr]/m;
+        p1j[j*yr+i*xr]=ly[blockDim.x+j]+(1.0-m)/(1.0+m)*(dog-p1j[j*yr+i*xr]);
     }
     if((i<blockDim.x-1)&&(i>0)&&(j>0)&&(j<gridDim.x-1))
     {
