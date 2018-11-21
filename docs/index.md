@@ -1,5 +1,7 @@
 # 带有GPU加速的声场FDTD方法
 
+[Github](https://github.com/ybw2016v/cuf/)
+
 一个利用cuda加速python程序利用fdtd算法进行声场模拟的程序。计算结果用numpy数组格式保存。
 
 基于python3和cuda，仅可在装备有NVIDIA显卡的计算机上使用。
@@ -19,12 +21,14 @@
 ```
 ## 计算原理
 
+以二维问题为例
+
 描述声场变化的状态方程：
 
 由伯努利方程可得
 $$ \begin{cases}
 \rho_{0} \frac{\partial \bm{v}}{\partial t}=-\nabla \cdot p \\
-\frac{1}{c^{2}_{0}} \frac{\partial p}{\partial v}=-\rho_{0} \nabla  \cdot \bm{v}
+\frac{1}{c^{2}_{0}} \frac{\partial p}{\partial t}=-\rho_{0} \nabla  \cdot \bm{v}
 \end{cases}$$
 
 其中$\nabla$为微分算符。
@@ -33,14 +37,16 @@ $$ \begin{cases}
 
 
 $$\begin{cases}
-v_{x}=v_{x}-\frac{p(i)-p(i-1)}{m Z_{0}}  &(1)\\
-v_{y}=v_{y}-\frac{p(j+1)-p(j)}{m Z_{0}}  &(2)\\
-p=p-Z_{0} \frac{v_{x}(i+1)-v_{x}(i)+v_{y}(j)-v_{y}(j-1)}{m} &(3)
+v_{x}^{T+1}=v_{x}^{T}-\frac{p(i)-p(i-1)}{m Z_{0}}  &(1)\\
+v_{y}^{T+1}=v_{y}^{T}-\frac{p(j+1)-p(j)}{m Z_{0}}  &(2)\\
+p^{T+1}=p^{T}-Z_{0} \frac{v_{x}(i+1)-v_{x}(i)+v_{y}(j)-v_{y}(j-1)}{m} &(3)
 \end{cases}$$
 
 其中$Z_{0}$为在点（i,j）处的$\rho_{0}$
 
 m为$\frac{dx}{c\  dt}$dx为离散的空间间隔，dt为时间间隔，c为波速。
+
+成功将微分方程转化为差分方程。
 
 ## 效果展示
 
