@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as npy
+import numpy as np
 from mayavi import mlab
 from mayavi.core.ui.mayavi_scene import MayaviScene
 from mayavi.tools.mlab_scene_model import MlabSceneModel
@@ -47,13 +48,15 @@ class DogPlot(HasTraits):
     D7s =Bool
     D8 = Float(9)
     D8s = Bool
+    DogC=Str
+    gdc=Item(name='DogC',style='custom',label='输出预览',resizable=True,height=600,width=400)
     gd=[Item(name='D0'),Item(name='D0s'),Item(name='D1'),Item(name='D1s'),Item(name='D2'),Item(name='D2s'),Item(name='D3'),Item(name='D3s'),Item(name='D4'),Item(name='D4s'),Item(name='D5'),Item(name='D5s'),Item(name='D6'),Item(name='D6s'),Item(name='D7'),Item(name='D7s'),Item(name='D8'),Item(name='D8s')]
 
 
 
     out=[Item(name='DogOutP',label='npy输出'),Item(name='DogOutC',label='C输出文件名'),Item(name='DogInter',label='插值系数'),Item(name='DogCal',label='计算'),Item(name='DogOutShape',label='输出规模',style='readonly'),Item(name='DogOutput',label='导出')]
     view = View(
-        HSplit(VGroup(
+        HSplit(VSplit(gdc),VGroup(
             Item(name='scene', 
                 editor=SceneEditor(scene_class=MayaviScene), # 设置mayavi的编辑器
                 resizable=True,
@@ -83,17 +86,96 @@ class DogPlot(HasTraits):
         mlab.clf()
         g = self.scene.mlab.test_mesh()
         # CloseAction()
-    def _DogCal_fired(self, parameter_list):
-        self.Doga1=npy.zeros_like(self.lu.OutDog)
+    def _DogCal_fired(self):
+        self.Doga1=npy.zeros_like(self.lu.cutdog)
+        self.NewDog=self.lu.cutdog.copy()
+        # print(self.DogInter)
+        self.NBdog=int3dog(self.lu.cutdog,(float(self.DogInter)))
+        print(self.NBdog.shape)
+        # self.NBdog
+        # np.save('cccog',self.lu.cutdog)
+        # np.save('dddog',self.NBdog)
+        mlab.clf()
+        fileddog=mlab.pipeline.scalar_field(self.NBdog)
+        self.nummax=self.NBdog.max()
+        self.DogOutShape=str(self.NBdog.shape)
+        mlab.pipeline.volume(fileddog,vmin=0,vmax=self.nummax)
+        mlab.colorbar()
+        self.DogNpy()
+        self.DogCwj()
+
         
+
+        # FunDog=npy.frompyfunc(self.Dogcov,2,0)
+        # FunDog(self.Doga1,self.lu.OutDog)
+        pass
+    def DogNpy(self):
+        ###生成npy
+        self.SsbDog=self.NBdog.copy()
+        self.nul=[self.D0,self.D1,self.D2,self.D3,self.D4,self.D5,self.D6,self.D7,self.D8]
+        fufdog=self.NBdog.reshape(-1) #成行
+        dudog=self.SsbDog.reshape(-1)
+        for usbdog in range(0,9):
+            lsb=np.argwhere(fufdog==usbdog)
+            dudog[lsb]=float(self.nul[usbdog])
+            pass
+    def DogCwj(self):
+        #生成C文件
+        DogStr=r'''    static int x$num[]=$rx1;
+    static int y$num[]=$ry1;
+    static int z$num[]=$rz1;
+    int longdog=$l1;
+    for (int i = 0; i  < longdog; i ++)
+    {
+        //p1[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+        //vx[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+        //vy[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+        //vz[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+        //z0[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+    }
+    '''
+
+        self.nuls=[self.D0s,self.D1s,self.D2s,self.D3s,self.D4s,self.D5s,self.D6s,self.D7s,self.D8s]
+        cumdog='\n'
+        for chDog in range(0,9):
+            # print(chDog)
+            if self.nuls[chDog]==True:
+                lup=np.where(self.NBdog==chDog)
+                spx=str(list(lup[0]))
+                spy=str(list(lup[1]))
+                spz=str(list(lup[2]))
+                spl=str(lup[0].size)
+                apu=DogStr.replace('$num',str(chDog)).replace('$rx1',spx).replace('$ry1',spy).replace('$rz1',spz).replace('$l1',spl)
+                cumdog=cumdog+apu
+                print(chDog)
+            pass
+        pass
+        esodog='''
+void usercode(float * p1,float * vx,float * vy,float * vz,float *z0,int xar, int yar,int zar,float m,int i)
+{
+
+$0$
+
+}
+        '''
+        self.DogC=esodog.replace('$0$',cumdog)
+        
+
+
         pass
     def Dogcov(self,a,b):
         self.nul=[self.D0,self.D1,self.D2,self.D3,self.D4,self.D5,self.D6,self.D7,self.D8]
-        for idog in range(0,9):
-            if b==idog:
+        for idog in range(0,8):
+            if self.b==idog:
                 self.a=self.nul[idog]
             pass
         pass    
+    def _DogOutput_fired(self):
+        np.save(self.DogOutP,self.SsbDog)
+        with open(self.DogOutC, 'w+',encoding='utf-8') as f:
+            f.write(self.DogC)
+        pass
+
 
 
 app = DogPlot(resizable=True)

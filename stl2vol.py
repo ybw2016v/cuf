@@ -6,6 +6,24 @@ from mesh_vox import read_and_reshape_stl, voxelize
 import math
 from mayavi import mlab
 
+import scipy.interpolate as itp
+import numpy as np
+#三维插值函数
+def int3dog(U,n):
+    x,y,z=U.shape
+    xdog=int(x*n)
+    ydog=int(y*n)
+    zdog=int(z*n)
+    xdimg=np.linspace(0,x-1,x)
+    ydimg=np.linspace(0,y-1,y)
+    zdimg=np.linspace(0,z-1,z)
+    d,e,f=np.mgrid[0:x-1:xdog*1j,1:y-1:ydog*1j,1:z-1:zdog*1j]
+    Vi = itp.RegularGridInterpolator((xdimg,ydimg,zdimg),U,method='nearest')
+    pudog=Vi(np.array([d,e,f]).T)
+    return pudog
+
+
+
 def stltrdog(stlpath,resolution):
 
 
@@ -183,6 +201,7 @@ class StlDog(object):
         self.DogRes=rse
         self.OutDog=stltrdog(self.Dogfile,self.DogRes)
         self.cutdog,self.numpug=devidedog(self.OutDog)
+        # self.ppp=self.cutdog
         
     def DogPlot(self):
         # puttdog(self.OutDog)
