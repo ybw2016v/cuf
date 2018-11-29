@@ -100,6 +100,7 @@ class DogPlot(HasTraits):
         self.nummax=self.NBdog.max()
         self.DogOutShape=str(self.NBdog.shape)
         mlab.pipeline.volume(fileddog,vmin=0,vmax=self.nummax)
+        # mlab.contour3d(self.NBdog)
         mlab.colorbar()
         self.DogNpy()
         self.DogCwj()
@@ -125,13 +126,13 @@ class DogPlot(HasTraits):
     static int y$num[]=$ry1;
     static int z$num[]=$rz1;
     int longdog=$l1;
-    for (int i = 0; i  < longdog; i ++)
+    for (int icd = 0; icd  < longdog; icd ++)
     {
-        //p1[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
-        //vx[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
-        //vy[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
-        //vz[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
-        //z0[x$num[i]*xar+y$num[i]*yar+z$num[i]*zar]=
+        //p1[x$num[icd]*xar+y$num[icd]*yar+z$num[icd]*zar]=
+        //vx[x$num[icd]*xar+y$num[icd]*yar+z$num[icd]*zar]=
+        //vy[x$num[icd]*xar+y$num[icd]*yar+z$num[icd]*zar]=
+        //vz[x$num[icd]*xar+y$num[icd]*yar+z$num[icd]*zar]=
+        //z0[x$num[icd]*xar+y$num[icd]*yar+z$num[icd]*zar]=
     }
     '''
 
@@ -141,10 +142,14 @@ class DogPlot(HasTraits):
             # print(chDog)
             if self.nuls[chDog]==True:
                 lup=np.where(self.NBdog==chDog)
-                spx=str(list(lup[0]))
-                spy=str(list(lup[1]))
-                spz=str(list(lup[2]))
+                # llxx=len()
+                spx1=str(list(lup[1]))
+                spy1=str(list(lup[2]))
+                spz1=str(list(lup[0]))
                 spl=str(lup[0].size)
+                spx=self.DogStr(spx1)
+                spy=self.DogStr(spy1)
+                spz=self.DogStr(spz1)
                 apu=DogStr.replace('$num',str(chDog)).replace('$rx1',spx).replace('$ry1',spy).replace('$rz1',spz).replace('$l1',spl)
                 cumdog=cumdog+apu
                 print(chDog)
@@ -174,6 +179,12 @@ $0$
         np.save(self.DogOutP,self.SsbDog)
         with open(self.DogOutC, 'w+',encoding='utf-8') as f:
             f.write(self.DogC)
+        pass
+    
+    def DogStr(self,strindog):
+        luf=len(strindog)
+        cudog='{'+strindog[1:luf-1]+'}'
+        return cudog
         pass
 
 
