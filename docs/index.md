@@ -1,6 +1,6 @@
 # 带有GPU加速的声场FDTD方法
 
-[Github](https://github.com/ybw2016v/cuf/)
+[https://github.com/ybw2016v/cuf/](https://github.com/ybw2016v/cuf/)
 
 一个利用cuda加速python程序利用fdtd算法进行声场模拟的程序。计算结果用numpy数组格式保存。
 
@@ -17,7 +17,15 @@
 ├── README.md
 ├── res 计算结果保存位置
 ├── scr 
+├── docs
+├── dogui2.py 图形界面
+├── dogui3.py 图形界面
+├── initdog.py
+├── README.md
+├── test
+├── test.sh 测试脚本
 └── usercode.c 次配置文件
+
 ```
 ## 计算原理
 
@@ -188,6 +196,26 @@ optional arguments:
 
 ```
 
+## 图形界面（GUI）与可视化部分
+
+基于tvtk的简易图形界面可以支持3d建模文件（目前仅支持STL文件）以简化三维情况下的次要配置文件，以及对结果的简单可视化。图形界面部分可以与计算部分分离，即可以再不同计算机上进行，方便在远程进行计算活动。
+
+### 3d模型级输入的可视化
+
+![001](fff.png)
+![001](ggg.png)
+文件：`dogui2.py`
+
+此图形化程序可以接受3d建模文件所输出的stl模型文件，并可以给模型文件的不同区域进行不同赋值表示，并可以在次要文件编辑区进行自由度更高的编辑，可以实现在任意一个时间步长内通过C语言函数对计算之中的任意数值做任意调整。
+
+### 计算结果的可视化显示
+
+![001](hhh.png)
+
+文件：`dogui3.py`
+
+对所得计算结果进行简单的可视化，目前有点图与等值面两种图形方式。
+
 ## 相关依赖
 
 * make
@@ -197,7 +225,14 @@ optional arguments:
 * numpy
 * matplotlib
 * progressbar
+* mesh_vox
+* mayavi
+* scipy
+* traits
+* traitsui
+* tvtk
 
 ## 版本更新
 
 1.0 原始版本
+1.1 添加了便于操作的图形界面
